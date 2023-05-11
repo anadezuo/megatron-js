@@ -1,7 +1,7 @@
 const controllers = document.querySelectorAll('.controle-ajuste')
-const statistics = document.querySelectorAll('[data-statistic]')
+const statistics = document.querySelectorAll('[data-statistics]')
 
-const pecas = {
+const parts = {
   "bracos": {
       "forca": 29,
       "poder": 35,
@@ -35,21 +35,26 @@ const pecas = {
   }
 }
 
+
 controllers.forEach(element => {
   element.addEventListener('click', (event) => {
     event.preventDefault()
-    handleController(event.target.dataset.controller, event.target.parentNode)
-    updateStatistic(event.target.dataset.part)
+
+   const operation = event.target.dataset.controller
+
+   handleStatistics(operation, event.target.dataset.part, event.target.parentNode)
+   handleController(operation, event.target.parentNode)
   })
 });
 
 
-function handleController(operation, controllerPart) {
-  const robotPart = controllerPart.querySelector('[data-counter]')
-
-  const execOperation = {'-' : subtractPartOnRobot, '+': addPartOnRobot}
+function handleController(operation, partRobot) {
+  const robotPart = partRobot.querySelector('[data-counter]')
+  const execOperation = {'-' : removePartOnRobot, '+': addPartOnRobot}
   
-  if(!!operation) execOperation[operation](robotPart)
+  if(!!operation) {
+    execOperation[operation](robotPart)
+  }
   else console.log('Operação não encontrada.')
 }
 
@@ -57,13 +62,33 @@ function addPartOnRobot(partRobot) {
   partRobot.value++
 }
 
-function subtractPartOnRobot(partRobot) {
+function removePartOnRobot(partRobot) {
   if (parseInt(partRobot.value) > 0)
-  partRobot.value--
+    partRobot.value--
 }
 
-function updateStatistic(part) {
+function handleStatistics(operation, robotPart, counter){
+  const robotPartCount = counter.querySelector('[data-counter]')
+  const execOperation = {'-': removeStatistic, '+': addStatistic}
 
+  if(!!operation) {
+    execOperation[operation](robotPart, robotPartCount)
+  }
+  else console.log('Estatística não encontrada.')
+}
+
+function addStatistic(robotPart) {
+  console.log(robotPart)
+  statistics.forEach(element => {
+    element.textContent = parseInt(element.textContent) + parts[robotPart][element.dataset.statistics]
+  })
+}
+
+function removeStatistic(robotPart, robotPartCount) {
+  if (parseInt(robotPartCount.value) > 0)
+    statistics.forEach(element => {
+      element.textContent = parseInt(element.textContent) - parts[robotPart][element.dataset.statistics]
+    })
 }
 
 
