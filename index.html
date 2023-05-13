@@ -14,37 +14,53 @@
 </head>
 <body>
     <main>
-        <section id="robotron" class="robotron">
-            <img class="robo" src="img/robotron.png" alt="Robotron">
-            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
-        </section>
+        <section class="imag-robot">
+
+            <section  id="robotron" class="robotron">
+                <img class="robo" src="img/robotron.png" alt="Robotron">
+                <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
+            </section>
+            <section id="colors" class="colors">
+                <button class="color pink" onclick="handleColorRobot('Rosa')"></button>
+                <button class="color white" onclick="handleColorRobot('Branco')"></button>
+                <button class="color yellow" onclick="handleColorRobot('Amarelo')"></button>
+                <button class="color red" onclick="handleColorRobot('Vermelho')"></button>
+                <button class="color blue" onclick="handleColorRobot('Azul')"></div>
+                <button class="color black" onclick="handleColorRobot('Preto')"></div> 
+            </section>
+        </section> 
+    </div>
 
         <section class="box estatisticas">
-            <div class="estatistica">
-                <p class="estatistica-titulo">Força</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-statistics="forca">0</p>
+          
+                <div class="estatistica">
+                    <p class="estatistica-titulo">Força</p>
+                    <div class="estatistica-valor">
+                        <p class="estatistica-numero" data-statistics="forca">0</p>
+                    </div>
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Poder</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-statistics="poder">0</p>
+                <div class="estatistica">
+                    <p class="estatistica-titulo">Poder</p>
+                    <div class="estatistica-valor">
+                        <p class="estatistica-numero" data-statistics="poder">0</p>
+                    </div>
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Energia</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-statistics="energia">0</p>
+                <div class="estatistica">
+                    <p class="estatistica-titulo">Energia</p>
+                    <div class="estatistica-valor">
+                        <p class="estatistica-numero" data-statistics="energia">0</p>
+                    </div>
                 </div>
-            </div>
-            <div class="estatistica">
-                <p class="estatistica-titulo">Velocidade</p>
-                <div class="estatistica-valor">
-                    <p class="estatistica-numero" data-statistics="velocidade">0</p>
+                <div class="estatistica">
+                    <p class="estatistica-titulo">Velocidade</p>
+                    <div class="estatistica-valor">
+                        <p class="estatistica-numero" data-statistics="velocidade">0</p>
+                    </div>
                 </div>
-            </div>
+          
+
         </section>
+
 
         <section class="equipamentos">
             <form action="" class="montador">

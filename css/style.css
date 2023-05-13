@@ -32,12 +32,18 @@ main {
     gap: 1vw;
 }
 
+.imag-robot {
+    display: flex;
+    flex-direction: column;
+}
+
 .robotron {
     background: url(../img/estrutura.png) no-repeat;
     background-position: center center;
     margin: 0;
     flex-basis: 40%;
     position: relative;
+    flex: max-content;
 }
 
 .robo {
@@ -210,6 +216,40 @@ main {
     order: 1;
     flex-basis: 35%;
     margin: 10px 0 0;
+}
+
+.color {
+    float:left;
+    background-clip: padding-box;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-top: 40px;
+}
+
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.white {
+    background-color: white;
+}
+
+.pink {
+    background-color: rgb(227, 164, 229);
 }
 
 @media screen and (max-width: 1600px) {

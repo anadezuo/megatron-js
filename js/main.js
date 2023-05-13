@@ -35,7 +35,6 @@ const parts = {
   }
 }
 
-
 controllers.forEach(element => {
   element.addEventListener('click', (event) => {
     event.preventDefault()
@@ -46,7 +45,6 @@ controllers.forEach(element => {
    handleController(operation, event.target.parentNode)
   })
 });
-
 
 function handleController(operation, partRobot) {
   const robotPart = partRobot.querySelector('[data-counter]')
@@ -78,7 +76,6 @@ function handleStatistics(operation, robotPart, counter){
 }
 
 function addStatistic(robotPart) {
-  console.log(robotPart)
   statistics.forEach(element => {
     element.textContent = parseInt(element.textContent) + parts[robotPart][element.dataset.statistics]
   })
@@ -92,3 +89,8 @@ function removeStatistic(robotPart, robotPartCount) {
 }
 
 
+function handleColorRobot(newColor){
+  const newSrc = "img/Robotron 2000 - " + newColor + ".png"
+  document.querySelector('.robo').src = newSrc
+  
+}
